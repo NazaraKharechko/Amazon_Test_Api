@@ -1,4 +1,13 @@
 from mws import mws
+import MySQLdb
+
+db = MySQLdb.connect(host='localhost',
+                     user='root',
+                     passwd='root',
+                     db='test_database')
+
+cur = db.cursor()
+
 
 access_key = 'AKIAJVFZKBOQE3FIY6XA'  # replace with your access key
 seller_id = 'A1EISHIC3JDGR2'  # replace with your seller id
@@ -34,3 +43,11 @@ for y in products_as_dict['Orders']['Order']:
 s = products_as_dict['Orders']['Order']['PurchaseDate']['value']
 
 print(f'PurchaseDate => {s}')
+
+cur.execute(s)
+db.commit()
+
+
+
+db.close()
+
