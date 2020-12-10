@@ -8,10 +8,9 @@ db = MySQLdb.connect(host='localhost',
 
 cur = db.cursor()
 
-
-access_key = 'AKIAJVFZKBOQE3FIY6XA'  # replace with your access key
-seller_id = 'A1EISHIC3JDGR2'  # replace with your seller id
-secret_key = 'NA2DSBf3/46qdMO1BzNQ1nBW4owAhB2oXFfzOIzS'  # replace with your secret key
+access_key = ''  # replace with your access key
+seller_id = ''  # replace with your seller id
+secret_key = ''  # replace with your secret key
 marketplace_usa = 'ATVPDKIKX0DER'
 
 orders_api = mws.Orders(access_key, secret_key, seller_id, region='US')
@@ -47,7 +46,4 @@ print(f'PurchaseDate => {s}')
 cur.execute(s)
 db.commit()
 
-
-
 db.close()
-
